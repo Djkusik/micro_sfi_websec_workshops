@@ -1,0 +1,3 @@
+[submodule "burp_training"]
+	path = burp_training
+	url = https://github.com/gregxsunday/burp-wkshop.git
