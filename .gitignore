@@ -46,6 +46,7 @@ prod_*
 *.db*
 .env
 
+near_me
 flags
 flags.json
 *.exe
