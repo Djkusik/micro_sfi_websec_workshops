@@ -14,7 +14,7 @@ func PrepareFlags() {
 
 	flagFolder := getEnv("FLAG_FOLDER", "folder_with_a_flag_really")
 	flagFile := getEnv("FLAG_FILE", "file_without_a_flag")
-	flagContent := getEnv("FLAG_CONTENT", "bit{that_was_easy_yeah?}")
+	flagContent := getEnv("FLAG_CONTENT", "sfi{that_was_easy_yeah?}")
 
 	_, err = os.Stat(flagFolder)
 	if os.IsNotExist(err) {
