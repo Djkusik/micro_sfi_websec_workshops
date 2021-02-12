@@ -5,7 +5,7 @@ const serveIndex = require('serve-index');
 const fs = require('fs');
 const requireUncached = require('require-uncached');
 const app = express()
-const port = 5002
+const port = 5003
 
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "pug");
@@ -47,11 +47,11 @@ var upload = multer({ storage: storage, fileFilter: function (req, file, cb) {
 })
 
 app.get('/', (req, res) => {
-	res.render("index", {Title: "AGHWS"});
+	res.render("index", {Title: "Micro SFI"});
 })
 
 app.get('/task1', (req, res) => {
-	res.render("task", {Title: "AGHWS", First: "./task1/cat?filename=1.jpg", Second:"./task1/cat?filename=2.jpg", Third: "./task1/cat?filename=3.jpg"});
+	res.render("task", {Title: "Micro SFI", First: "./task1/cat?filename=1.jpg", Second:"./task1/cat?filename=2.jpg", Third: "./task1/cat?filename=3.jpg"});
 })
 
 app.get('/task1/cat', (req, res, next) => {
@@ -69,8 +69,8 @@ app.get('/task1/cat', (req, res, next) => {
 })
 
 app.get('/task2', (req, res) => {
-	//jctf{flag_should_be_here}
-	res.render("task", {Title: "AGHWS", First: "./task2/cat?filename=1.jpg", Second:"./task2/cat?filename=2.jpg", Third: "./task2/cat?filename=3.jpg"});
+	//sfi{flag_should_be_here}
+	res.render("task", {Title: "Micro SFI", First: "./task2/cat?filename=1.jpg", Second:"./task2/cat?filename=2.jpg", Third: "./task2/cat?filename=3.jpg"});
 })
 
 app.get('/task2/cat', (req, res, next) => {
@@ -89,7 +89,7 @@ app.get('/task2/cat', (req, res, next) => {
 })
 
 app.get('/task3', (req, res) => {
-	res.render("form", {Title: "AGHWS"});
+	res.render("form", {Title: "Micro SFI"});
 })
 
 app.post('/task3', upload.single('zipupload'),(req, res, next) => {
@@ -106,7 +106,7 @@ app.post('/task3', upload.single('zipupload'),(req, res, next) => {
 })
 
 app.get('/task4', (req, res) => {
-	res.render("form", {Title: "AGHWS"});
+	res.render("form", {Title: "Micro SFI"});
 })
 
 app.post('/task4', upload.single('zipupload'), (req, res, next) => {

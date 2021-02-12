@@ -1,0 +1,23 @@
+version: '2'
+services:
+  main:
+    build: ./welcome_app
+    ports:
+      - "5005:5005"
+  burp:
+    build: ./burp_training
+    ports:
+      - "5000:5000"
+  cmd_injection:
+    build: ./task_command_injection
+    ports:
+      - "5001:5001"
+  idor:
+    build: ./task_idor/src
+    ports:
+      - "5002:5002"
+  path_traversal:
+    build: ./task_path_traversal
+    ports:
+      - "5003:5003"
+      - "2222:22"

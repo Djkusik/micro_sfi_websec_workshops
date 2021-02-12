@@ -1,1 +1,1 @@
-jctf{flag_in_js_file}
+sfi{flag_in_js_file}

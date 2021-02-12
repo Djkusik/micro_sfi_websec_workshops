@@ -8,6 +8,10 @@ COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 COPY remove-cron /etc/cron.d/remove-cron
 COPY some /root/
 
+COPY vulnerable_express_app /home/express/vulnerable_express_app
+COPY flag /home/express/
+COPY test.js /etc/
+
 RUN echo "StrictModes no" >> /etc/ssh/sshd_config &&\
     chmod 0644 /etc/cron.d/remove-cron &&\
     crontab /etc/cron.d/remove-cron &&\
@@ -19,9 +23,6 @@ RUN echo "StrictModes no" >> /etc/ssh/sshd_config &&\
     adduser express sudo &&\
     echo "express ALL=(ALL) NOPASSWD: /root/some" >> /etc/sudoers
 
-COPY vulnerable_express_app /home/express/vulnerable_express_app
-COPY flag /home/express/
-COPY test.js /etc/
 RUN chown -R express:express /home/express/vulnerable_express_app /etc/test.js
 
 USER express
@@ -32,5 +33,5 @@ RUN npm install
 USER root
 RUN chmod a-w /home/express/vulnerable_express_app/app.js &&\
     chmod a-w /home/express/vulnerable_express_app/flag.js
-EXPOSE 5002 22
+EXPOSE 5003 22
 CMD ["/usr/bin/supervisord"]

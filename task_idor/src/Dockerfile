@@ -19,6 +19,6 @@ RUN flask db upgrade
 RUN chown -R blog:blog ./
 USER blog
 
-EXPOSE 5000
+EXPOSE 5002
 ENTRYPOINT ["python"]
 CMD ["blog.py"]
