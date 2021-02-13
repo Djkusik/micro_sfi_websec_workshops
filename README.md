@@ -1,3 +1,3 @@
 # Micro SFI Websec Workshops
 
-[Exercises here](nf-ssrf.tech)
+[Exercises here](http://nf-ssrf.tech)
